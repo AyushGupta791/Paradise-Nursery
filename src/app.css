@@ -1,0 +1,133 @@
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fffdf5;
+  background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2200&q=85');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 31, 20, 0.88),
+    rgba(12, 39, 25, 0.64) 48%,
+    rgba(12, 39, 25, 0.1)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 72px clamp(24px, 8vw, 120px);
+  animation: appear 0.8s ease both;
+}
+
+.hero-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c6d9a2;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(4.3rem, 10vw, 8.5rem);
+  line-height: 0.91;
+  letter-spacing: -0.065em;
+  margin: 28px 0;
+}
+
+.hero h1 em {
+  color: #c9dcaa;
+  font-weight: 400;
+}
+
+.hero-copy {
+  max-width: 450px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #d4e2b6;
+  color: #173b29;
+  padding: 15px 23px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  background: #e8f0d6;
+}
+
+.hero-note {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 38px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-bottom {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px clamp(24px, 8vw, 120px);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 0.67rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-content {
+    padding: 48px 25px 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 20vw, 6rem);
+  }
+
+  .hero-bottom {
+    font-size: 0.55rem;
+    padding: 15px 20px;
+    gap: 8px;
+  }
+}
